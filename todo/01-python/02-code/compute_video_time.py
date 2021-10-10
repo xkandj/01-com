@@ -15,9 +15,9 @@ def compute_video_time(file_path):
             if file_name.endswith(type):
                 file_list.append(file_name)
 
-    # format, <->左中右
-    plen = 50
-    print(f'{"开始视频文件统计":-^{plen}}')
+    # format, <^>左中右
+    print_len = 50
+    print(f'{"开始视频文件统计":-^{print_len}}')
     total_time = 0.0
     count = 0
     for item in file_list:
@@ -33,7 +33,7 @@ def compute_video_time(file_path):
             clip.reader.close()
             clip.audio.reader.close_proc()
 
-    print(f'{"视频文件统计结束":-^{plen}}')
+    print(f'{"视频文件统计结束":-^{print_len}}')
     print(f"文件数量：{count}")
     print(
         f"视频总时长：{total_time}秒, {time.strftime('%H:%M:%S', time.gmtime(total_time))}(时:分:秒)")
